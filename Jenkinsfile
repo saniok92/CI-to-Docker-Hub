@@ -1,31 +1,40 @@
 pipeline {
-  agent any
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+    }
+
   }
-  environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker-hub')
-  }        
-  stages{
-    stage('Build'){
-      steps{
+  stages {
+    stage('Build') {
+      steps {
         sh 'docker build -t saniok92/example:1 .'
       }
     }
-    stage('login'){
-      steps{
+
+    stage('login') {
+      steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
+
     stage('Push') {
       steps {
         sh 'docker push saniok92/example:1'
       }
     }
+
+  }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('docker-hub')
   }
   post {
     always {
       sh 'docker logout'
     }
+
+  }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
   }
 }
