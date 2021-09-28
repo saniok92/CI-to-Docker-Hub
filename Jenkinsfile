@@ -9,7 +9,7 @@ pipelene {
   stages{
     stage('Build'){
       steps{
-        sh 'docker build -t saniok92/example:1 .'
+        sh 'cd docker, docker build -t saniok92/example:1 .'
       }
     }
     stage('login'){
