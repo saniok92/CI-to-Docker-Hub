@@ -4,7 +4,7 @@ pipeline {
         dockerTool 'Docker'
     }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker')
+    DOCKERHUB_CREDENTIALS = credentials('docker_hub')
   }
   stages {
     stage('Build') {
