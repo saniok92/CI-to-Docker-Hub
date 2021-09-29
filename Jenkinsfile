@@ -4,7 +4,7 @@ pipeline {
         dockerTool 'Docker'
     }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker_hub')
+    DOCKERHUB_CREDENTIALS = credentials('docker')
   }
   stages {
     stage('Build') {
@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PWD | docker login -u DOCKERHUB_CREDENTIALS_USR -password'
+        sh 'echo $docker | docker login -u saniok92 -password'
       }
     }
     stage('Push') {
