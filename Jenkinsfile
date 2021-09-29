@@ -12,15 +12,16 @@ pipeline {
         sh 'docker build -t saniok92/example:1 .'
       }
     }
-
+      stage('Login') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW  | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
     stage('Push') {
       steps {
-        withDockerRegistry(credentialsId: 'docker_hub', url: 'https://index.docker.io/v1/'){
         sh 'docker push saniok92/example:1'
       }
-   
     }
-
   }
 
   post {
