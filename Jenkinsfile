@@ -3,8 +3,8 @@ pipeline {
   tools {
         dockerTool 'Docker'
     }
-    environment {
-      DOCKERHUB_CREDENTIALS = credentials('docker-hub')
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('docker-hub')
   }
   stages {
     stage('Build') {
@@ -31,9 +31,5 @@ pipeline {
     always {
       sh 'docker logout'
     }
-
-  }
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
   }
 }
