@@ -3,6 +3,9 @@ pipeline {
   tools {
         dockerTool 'Docker'
     }
+    environment {
+      DOCKERHUB_CREDENTIALS = credentials('docker-hub')
+  }
   stages {
     stage('Build') {
       steps {
@@ -23,9 +26,7 @@ pipeline {
     }
 
   }
-  environment {
-    DOCKERHUB_CREDENTIALS = credentials('docker-hub')
-  }
+
   post {
     always {
       sh 'docker logout'
