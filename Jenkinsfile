@@ -14,7 +14,7 @@ pipeline {
     }
       stage('Login') {
       steps {
-        sh 'docker login --username saniok92 --password-stdin < ~/docker_hub
+        sh 'docker login --username saniok92 --password-stdin < ~/docker_hub'
       }
     }
     stage('Push') {
