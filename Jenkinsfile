@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS | docker login -u saniok92 -password'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PWD | docker login -u DOCKERHUB_CREDENTIALS_USR --password'
       }
     }
     stage('Push') {
