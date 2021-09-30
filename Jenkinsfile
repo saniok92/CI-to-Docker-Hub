@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build'){
       steps {
-        docker.withRegistry('https://hub.docker.com/, 'saniok92-dockerhub') {
+        docker.withRegistry('https://hub.docker.com/', 'saniok92-dockerhub') {
         docker.build('example')
         image.push('latest')
                       }
