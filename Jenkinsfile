@@ -10,6 +10,7 @@ pipeline {
     stage('Build'){
       steps {
         docker.withRegistry('https://hub.docker.com/repository/docker/saniok92/example', 'saniok92-dockerhub') {
+          git 'git@github.com:saniok92/CI-to-DockerHub.git'
                                def image = docker.build('example')
                                image.push('latest')
         }
