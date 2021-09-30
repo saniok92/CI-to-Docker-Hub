@@ -6,10 +6,15 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('saniok92-dockerhub')
   }
-docker.withRegistry('https://hub.docker.com/u/saniok92', 'saniok92-dockerhub') {
-                        docker.build('example')
-                        image.push('latest')
+  stages {
+    stage('Build'){
+      steps {
+        docker.withRegistry('https://hub.docker.com/u/saniok92', 'saniok92-dockerhub') {
+        docker.build('example')
+        image.push('latest')
                       }
+      }
+    }
 
   post {
     always {
