@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build'){
       steps {
-        docker.withRegistry('https://index.docker.io/v1/', 'DOCKERHUB_CREDENTIALS') {
+        docker.withRegistry('https://hub.docker.com/', 'DOCKERHUB_CREDENTIALS') {
            sh' docker.build('example'), image.push('latest')'
         }
       }
