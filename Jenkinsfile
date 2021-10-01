@@ -9,9 +9,11 @@ pipeline {
   stages {
     stage('Build'){
       steps {
-        docker.withRegistry('https://hub.docker.com', 'saniok92-dockerhub') {
-          def img=docker.build('saniok92/example')
-          img.push('latest')
+        script {
+          docker.withRegistry('https://hub.docker.com', 'saniok92-dockerhub') {
+            def img=docker.build('saniok92/example')
+            img.push('latest')
+          }
         }
       }
     }
