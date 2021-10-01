@@ -10,6 +10,7 @@ pipeline {
     stage('Build'){
       steps {
         script {
+          sh 'docker version'
           docker.withRegistry('https://hub.docker.com', 'saniok92-dockerhub') {
             def img=docker.build('saniok92/example')
             img.push('latest')
