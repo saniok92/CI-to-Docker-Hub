@@ -1,5 +1,5 @@
 pipeline {
-  agent {labels 'agent'}
+  agent {label 'agent'}
   tools {
         dockerTool 'Docker'
     }
