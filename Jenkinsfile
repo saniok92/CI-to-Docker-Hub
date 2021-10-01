@@ -10,9 +10,7 @@ pipeline {
     stage('Build'){
       steps {
         docker.withRegistry('https://index.docker.io/v1/', 'DOCKERHUB_CREDENTIALS') {
-           sh' git 'git@github.com:saniok92/CI-to-DockerHub.git'
-                               docker.build('example')
-                               image.push('latest')'
+           sh' docker.build('example'), image.push('latest')'
         }
       }
     }
