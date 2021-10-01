@@ -1,5 +1,9 @@
 pipeline {
-  agent {label 'agent1'}
+  agent any
+  tools{
+     docker 'Docker'
+  }
+     
   environment {
     DOCKERHUB_CREDENTIALS = credentials('saniok92-dockerhub')
   }
