@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { node { label 'master' } }
      
   environment {
     DOCKERHUB_CREDENTIALS = credentials('saniok92-dockerhub')
