@@ -1,8 +1,5 @@
 pipeline {
-  agent any
-  tools{
-     dockerTool 'docker'
-  }
+  agent {label 'master'}
      
   environment {
     DOCKERHUB_CREDENTIALS = credentials('saniok92-dockerhub')
