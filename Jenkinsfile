@@ -1,20 +1,26 @@
 pipeline {
   agent { label 'linux' } 
      
+   environment {
+    DOCKERHUB_CREDENTIALS = credentials('saniok92-dockerhub')
+  }
   stages {
-    stage('Build'){
+    stage('Build') {
       steps {
-        script {
-          sh 'docker version'
-          docker.withRegistry('https://hub.docker.com', 'saniok92-dockerhub') {
-            def img=docker.build('saniok92/example')
-            img.push('latest')
-          }
-        }
+        sh 'docker build -t saniok92/example:1.0 .'
+      }
+    }
+    stage('Login') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
+    stage('Push') {
+      steps {
+        sh 'docker push saniok92/example:1.0'
       }
     }
   }
-
   post {
     always {
       sh 'docker logout'
