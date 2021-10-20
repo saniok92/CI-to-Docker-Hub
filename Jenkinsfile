@@ -1,9 +1,14 @@
 pipeline {
   agent { label 'linux' } 
+<<<<<<< HEAD
      
    environment {
     DOCKERHUB_CREDENTIALS = credentials('saniok92-dockerhub')
   }
+=======
+
+>>>>>>> 1bf3c8b6375d4f50c7f765fb2f8a3e35875d076c
+
   stages {
     stage('Build') {
       steps {
