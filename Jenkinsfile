@@ -1,10 +1,6 @@
 pipeline {
   agent { label 'linux' } 
-    environment {
-      registry = "saniok92/example"
-      registryCredential = 'saniok92-dockerhub'
-      dockerImage = 'saniok92/example'
-} 
+
   stages {
     stage('Build'){
       steps {
