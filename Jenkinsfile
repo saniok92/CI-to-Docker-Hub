@@ -1,7 +1,7 @@
 pipeline {
   agent { label 'linux' } 
    environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub_token')
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub-token')
   }
 
   stages {
