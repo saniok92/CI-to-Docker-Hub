@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t saniok92/example:1.0 .'
+        sh 'docker build -t saniok92/jenkins:1.0 .'
       }
     }
     stage('Login') {
@@ -17,10 +17,10 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push saniok92/example:1.0'
+        sh 'docker push saniok92/jenkins:1.0'
       }
     }
-  }
+  } 
   post {
     always {
       sh 'docker logout'

@@ -3,51 +3,112 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 							/* body*/
 body, html {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif, "monserrat";
 	color: rgb(54, 34, 34);
-    background-color:ivory;
+    background-color: #E0CA45;
 }
 
-p {
+.hero p {
 	text-align: center;
 	font-size: 40pt;
+	margin-top: 8%;
 }
 
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
+.hero h3 {
+	text-align: center;
+	font-size: 35px;
+	margin-top: 5%;
 }
-
 
 /* footer*/
 .social {
-	font-size: 2em;
-	padding: 2px;
-	display: inline-block;
-	margin-right: 12px;
+	list-style: none;
+    align-items: center;
+	display: flex;
+	margin: 0;
+}
 
+.social li {
+	margin: 0 10px;
 }
-span{
-	margin-left: 12px;
-	font-size: 16px;
-	color: aliceblue;
+
+.social a {
+	text-decoration: none;
+	padding: 5px;
 }
-.fa-facebook-f {margin-left: 10px; color:#3b5998}
-.fa-instagram {margin-left: 10px; color:#ec4a65}
+
+.social a i {
+	font-size: 2rem;
+	width: 25px;
+}
+
+.fa-facebook-messenger {margin-left: 10px; color:#3b5998}
+.fa-camera-retro {margin-left: 10px; color:#ec4a65}
 .fa-telegram {margin-left: 10px; color:#00aced}
 .fa-linkedin-in {margin-left: 10px; color:#0080ff}
-.fa-github {margin-left: 10px; color: #ece7f1;}
+.fa-github {margin-left: 10px; color: #eff1e7;}
 
-.fa-facebook-f:hover,
-.fa-instagram:hover, .fa-telegram:hover, 
+.fa-facebook-messenger:hover,
+.fa-camera-retro:hover, .fa-telegram:hover, 
 .fa-linkedin-in:hover, .fa-github:hover {color: #ccc}
 
 footer { 
-	background-color: #02020f;
-	padding-top: 5px;
-	border-top: 2px solid silver;
-	color: antiquewhite;
-	margin-bottom: 0
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #111;
+	height: auto;
+	width: 100vw;
+	padding-top: 40px;
+	color: #fff;
+}
+
+.footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.footer-bottom span {
+    font-size: 1.4rem;
+	font-weight: 500;
+	text-transform: capitalize;
+	line-height: 3rem;
+}
+
+.footer-cofe{
+	float: right;
+}
+
+.footer-cofe img {
+	width: 12%;
+	height: 12%;
+	float: right;
+	margin-right: 15px;
+}
+/* error section */
+
+.error {
+width: 100%;
+height: 100%;
+position: absolute;
+left: 0%;
+top: 0;
+background-color: #ede0fc;
+text-align: center;
+color: #343434
+}
+
+.error h1 {
+	font-size: 160px;
+	margin: 0;
+	font-weight: 900;
+	letter-spacing: 20px;
+}
+
+.error h2 {
+	margin-top: 12%;
 }
