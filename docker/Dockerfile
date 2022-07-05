@@ -1,6 +1,6 @@
 FROM nginx:1.21.1-alpine
 
-WORKDIR /jenkins
+WORKDIR /project
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
