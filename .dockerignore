@@ -1,9 +1,0 @@
-# ignore .git and .cashe folders
-.git
-.cache
-
-# ignore all markdown files 
-*.md
-
-# ignore sensetive files
- 
