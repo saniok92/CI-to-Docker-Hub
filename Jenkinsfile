@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build . -t saniok92/test_pipeline:1.0 -f /docker/Dockerfile'
+        sh 'docker build -t saniok92/test_pipeline:1.0 . -f docker/Dockerfile'
       }
     }
     stage('Login') {
