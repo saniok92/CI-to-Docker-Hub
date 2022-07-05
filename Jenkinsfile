@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t saniok92/sample:1.1'
+        sh 'docker build -t saniok92/sample:1.1 .'
       }
     }
     stage('Login') {
